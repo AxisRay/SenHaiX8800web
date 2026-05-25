@@ -354,7 +354,7 @@ function App({ onToggleTheme, currentTheme }) {
 
   return (
     <AppContext.Provider value={contextValue}>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
         <Routes>
           <Route element={<LayoutShell />}>
             <Route index element={<Navigate to="/overview" replace />} />
